@@ -1,0 +1,46 @@
+@use "/src/app/styles/abstracts/variables" as *;
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: space-between;
+    height: calc(100vh - $navbar-height);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 2rem 4rem;
+
+    .search{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+
+        .searchInput{
+
+            background-color: var(--primary);
+
+            input{
+
+            }
+        }
+
+        .filter{
+
+        }
+
+    }
+
+    .countriesContainer{
+        margin-left: 0;
+        margin-right: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 4rem;
+    }
+}

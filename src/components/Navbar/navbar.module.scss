@@ -1,0 +1,11 @@
+@use "/src/app/styles/abstracts/variables" as *;
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: $navbar-height;
+    padding: 1rem 4rem;
+    background-color: var(--primary);
+    color: var(--text-color);
+}
