@@ -1,36 +1,41 @@
 "use client";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import Card from "@/components/Card";
 import { useTheme } from "@/context/ThemeContext";
 import styles from "./page.module.scss";
+import React from "react";
+import Select from "@/components/Select";
 
 export default function Home() {
   const { theme } = useTheme();
+  HTMLDivElement;
+  const selectOptions = [
+    { value: "Africa", label: "Africa" },
+    { value: "America", label: "America" },
+    { value: "Asia", label: "Asia" },
+    { value: "Europe", label: "Europe" },
+    { value: "Oceania", label: "Oceania" },
+  ];
+
   return (
     <main className={styles.main} data-theme={theme}>
       <section className={styles.search}>
         <div className={styles.searchInput}>
-          <SearchIcon />
+          <SearchIcon className={styles.searchIcon} />
           <input type="text" placeholder="Search for a country..." />
         </div>
-        <select className={styles.filter} name="region" id="region">
-          <option value="Filter by Region">Filter by Region</option>
-          <option value="Africa">Africa</option>
-          <option value="America">America</option>
-          <option value="Asia">Asia</option>
-          <option value="Europe">Europe</option>
-          <option value="Oceania">Oceania</option>
-        </select>
+        <Select options={selectOptions} placeholder="Filter by Region"/>
       </section>
       <section className={styles.countriesContainer}>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </section>
     </main>
   );

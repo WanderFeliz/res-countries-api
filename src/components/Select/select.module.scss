@@ -1,0 +1,76 @@
+.select{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 200px;
+    height: 100%;
+    background-color: var(--primary);
+    color: var(--text-color);
+    border-radius: 5px;
+
+    .selectBox{
+        border: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        list-style: none;
+        padding: 0 30px 0 15px;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        // justify-content: space-between;
+
+        .selectOption{
+            display: none;
+        }
+        .selectOption:first-child{
+            display: block;
+        }
+
+
+    }
+    &:focus{
+        .selectBox{
+            position: absolute;
+            flex-direction: column;
+            height: 150px;
+            justify-content: flex-start;
+            padding: 0;
+            top: 3.6rem;
+            border-radius: 5px;
+            // align-items: flex-start;
+
+            .selectOption{
+                display: block;
+                width: 100%;
+                height: 50px;
+                background-color: var(--primary);
+                color: var(--text-color);
+                border: none;
+                outline: none;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 5px 15px;
+                // padding: 0 30px 0 15px;
+
+                &:hover{
+                    background-color: var(--bg-color);
+                }
+            }
+        }
+
+    }
+
+    
+
+    .selectArrow{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+    }
+
+}
