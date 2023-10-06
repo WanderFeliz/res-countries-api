@@ -14,12 +14,14 @@
   --primary: var(--white);
   --secondary: var(--dark-gray);
   --text-color: var(--very-dark-blue-text);
+  --shadow-color: var(--dark-gray);
 
   [data-theme="dark"] {
     --bg-color: var(--very-dark-blue);
     --primary: var(--dark-blue);
     --secondary: var(--white);
     --text-color: var(--white);
+    --shadow-color: var(--very-dark-blue-text);
   }
 
   // .dark{

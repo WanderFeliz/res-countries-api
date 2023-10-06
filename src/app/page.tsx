@@ -9,7 +9,6 @@ import Select from "@/components/Select";
 
 export default function Home() {
   const { theme } = useTheme();
-  HTMLDivElement;
   const selectOptions = [
     { value: "Africa", label: "Africa" },
     { value: "America", label: "America" },

@@ -19,7 +19,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 0 10px var(--primary) 0.3;
+        box-shadow: 0 0 10px var(--shadow-color) 0.3;
 
         .searchInput{
             height: 100%;
@@ -35,19 +35,20 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
+                color: var(--secondary);
             }
 
             input{
                 height: 100%;
                 width: 85%;
-                color: var(--text-color);
+                color: var(--secondary);
                 background-color: var(--primary);
                 border: none;
                 outline: none;
                 
 
                 &::placeholder{
-                    color: var(--text-color);
+                    color: var(--secondary);
                 }
             }
         }
