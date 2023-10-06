@@ -14,18 +14,14 @@ const Navbar = () => {
         <h2>Where in the world?</h2>
       </div>
       <div className={styles.right}>
-        <button className={styles.themIcon} onClick={toggleTheme}>
+        <button className={styles.themeButton} onClick={toggleTheme}>
           {theme === "light" ? (
-            <>
-              <LightModeIcon />
-              <h2>Light Mode</h2>
-            </>
+            <LightModeIcon className={styles.themeIcon} />
           ) : (
-            <>
-              <DarkModeIcon />
-              <h2>Dark Mode</h2>
-            </>
+            <DarkModeIcon className={styles.themeIcon} />
           )}
+
+          {theme === "light" ? <p>Light Mode</p> : <p>Dark Mode</p>}
         </button>
       </div>
     </nav>

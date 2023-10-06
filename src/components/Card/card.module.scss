@@ -6,6 +6,8 @@
     display: flex;
     flex-direction: column;
     border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px var(--primary) 0.3;
 
     .cardImage{
         width: 100%;

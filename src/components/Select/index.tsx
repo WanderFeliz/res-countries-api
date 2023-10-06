@@ -1,9 +1,8 @@
 "use client";
-import { FC } from "react";
+import { FC, useState } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import styles from "./select.module.scss";
 import { OptionType } from "@/types";
-
 
 type SelectProps = {
   options: OptionType[];
@@ -11,25 +10,23 @@ type SelectProps = {
   // onChange: (value: string) => void;
 };
 
-const Select: FC<SelectProps> = () => {
+const Select: FC<SelectProps> = ({ options, placeholder }) => {
+  const [selected, setSelected] = useState<string>(placeholder);
+
   return (
     <div tabIndex={0} className={styles.select}>
+      <div className={styles.selectPlaceholder}>{selected}</div>
       <ul className={styles.selectBox} id="region">
-        <li className={styles.selectOption} value="Africa">
-          Africa
-        </li>
-        <li className={styles.selectOption} value="America">
-          America
-        </li>
-        <li className={styles.selectOption} value="Asia">
-          Asia
-        </li>
-        <li className={styles.selectOption} value="Europe">
-          Europe
-        </li>
-        <li className={styles.selectOption} value="Oceania">
-          Oceania
-        </li>
+        {options.map((option) => (
+          <li
+            key={option.value}
+            className={styles.selectOption}
+            value={option.value}
+            onClick={() => setSelected(option.value)}
+          >
+            {option.label}
+          </li>
+        ))}
       </ul>
       <div className={styles.selectArrow}>
         <KeyboardArrowDownIcon />

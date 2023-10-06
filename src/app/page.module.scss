@@ -19,6 +19,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        box-shadow: 0 0 10px var(--primary) 0.3;
 
         .searchInput{
             height: 100%;

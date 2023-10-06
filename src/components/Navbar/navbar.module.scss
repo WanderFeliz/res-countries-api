@@ -9,4 +9,26 @@
     padding: 1rem 4rem;
     background-color: var(--primary);
     color: var(--text-color);
+    box-shadow: 0 0 10px var(--primary) 0.3;
+
+    .themeButton{
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: .3rem;
+        border: none;
+        outline: none;
+        appearance: none;
+        background-color: transparent;
+        color: var(--text-color);
+        font-weight: 300;
+        cursor: pointer;
+
+        .themeIcon{
+            width: 24px;
+            height: 16px;
+            font-size: 14px;
+        }
+    }
 }
