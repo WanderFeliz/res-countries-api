@@ -19,7 +19,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        box-shadow: 0 0 10px var(--shadow-color) 0.3;
 
         .searchInput{
             height: 100%;
@@ -29,6 +28,7 @@
             align-items: center;
             justify-content: center;
             border-radius: 5px;
+            box-shadow: 0 0 8px var(--shadow-color);
 
             .searchIcon{
                 width: 10%;

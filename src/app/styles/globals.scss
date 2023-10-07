@@ -15,21 +15,22 @@
   --secondary: var(--dark-gray);
   --text-color: var(--very-dark-blue-text);
   --shadow-color: var(--dark-gray);
+  // Card variables
+  --card-hover-shadow: var(--dark-gray);
+  --card-hover-border: var(--dark-gray);
+  --card-hover-bg: var(--very-light-gray);
 
   [data-theme="dark"] {
     --bg-color: var(--very-dark-blue);
     --primary: var(--dark-blue);
     --secondary: var(--white);
     --text-color: var(--white);
-    --shadow-color: var(--very-dark-blue-text);
+    --shadow-color: var(--very-dark-blue);
+    // Card variables
+    --card-hover-shadow: var(--dark-gray);
+    --card-hover-border: var(--very-dark-blue);
+    --card-hover-bg: var(--dark-blue);
   }
-
-  // .dark{
-  //   --bg-color: var(--very-dark-blue);
-  //   --primary: var(--dark-blue);
-  //   --secondary: var(--white);
-  //   --text-color: var(--white);
-  // }
 
 }
 
@@ -50,11 +51,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 0.3rem;
     width: 100%;
     height: 100%;
     background-color: var(--bg-color);
     color: var(--text-color);
-    transition: background .5s ease;
 
     > * {
       max-width: 1440px;

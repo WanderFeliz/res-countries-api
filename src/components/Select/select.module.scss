@@ -4,12 +4,13 @@
     position: relative;
     width: 200px;
     height: 100%;
+    z-index: 50;
     background-color: var(--primary);
     color: var(--text-color);
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px var(--shadow-color) 0.3;
+    box-shadow: 0 0 8px var(--shadow-color);
 
     .selectPlaceholder{
         width: 100%;
