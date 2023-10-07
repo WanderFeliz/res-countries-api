@@ -26,7 +26,7 @@
             outline: none;
             border: none;
             background-color: var(--primary);
-            color: var(--secondary);
+            color: var(--text-color);
             box-shadow: 0 0 8px var(--shadow-color);
 
             &:hover {
@@ -64,7 +64,7 @@
 
         .detailImage {
             width: 600px;
-            height: 400px;
+            height: 450px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -80,12 +80,88 @@
 
         .detailContent{
             width: 600px;
-            height: 400px;
+            height: 450px;
             display: flex;
+            gap: 1rem;
             flex-direction: column;
             align-items: flex-start;
             justify-content: center;
-            
+            line-height: 2;
+
+            .detailTitle {
+                font-size: 2rem;
+                font-weight: 800;
+            }
+
+            .detailDescription {
+                height: 200px;
+                font-size: 16px;
+                font-weight: 300;
+                display: flex;
+                justify-content: space-between;
+                color: var(--text-color);
+
+                span {
+                    font-weight: 600;
+                }
+
+                .leftDesc {
+                    width: 300px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+                .rightDesc {
+                    width: 300px;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+
+
+            }
+
+            // .detailBorderCountries {
+            //     font-size: 1.2rem;
+            //     font-weight: 600;
+            //     margin-bottom: 1rem;
+            //     display: flex;
+            //     flex-wrap: wrap;
+            //     gap: 0.5rem;
+
+            //     .borderCountry {
+            //         width: 100px;
+            //         height: 30px;
+            //         display: flex;
+            //         align-items: center;
+            //         justify-content: center;
+            //         border-radius: 5px;
+            //         outline: none;
+            //         border: none;
+            //         background-color: var(--primary);
+            //         color: var(--secondary);
+            //         box-shadow: 0 0 8px var(--shadow-color);
+
+            //         &:hover {
+            //             cursor: pointer;
+            //             top: -4px;
+            //             box-shadow: 0 4px 8px var(--secondary);
+            //             border: 1px solid var(--shadow-color);
+            //         }
+
+            //         &:active{
+            //             top: 4;
+            //             box-shadow: 0 0 8px var(--shadow-color) inset, 0 0 8px var(--secondary);
+            //             background-color: var(--secondary);
+            //             border: 1px solid var(--primary);
+            //             color: var(--primary);
+            //         }
+            //     }
+            // }
+
         }
     }
 }

@@ -26,30 +26,34 @@ const DetailPage = () => {
         <div className={styles.detailContent}>
           <h2 className={styles.detailTitle}>Country Name</h2>
           <div className={styles.detailDescription}>
-            <p>
-              <span>Native Name:</span> Native Name
-            </p>
-            <p>
-              <span>Population:</span> Population
-            </p>
-            <p>
-              <span>Region:</span> Region
-            </p>
-            <p>
-              <span>Sub Region:</span> Sub Region
-            </p>
-            <p>
-              <span>Capital:</span> Capital
-            </p>
-            <p>
-              <span>Top Level Domain:</span> Top Level Domain
-            </p>
-            <p>
-              <span>Currencies:</span> Currencies
-            </p>
-            <p>
-              <span>Languages:</span> Languages
-            </p>
+            <div className={styles.leftDesc}>
+              <p>
+                <span>Native Name:</span> Native Name
+              </p>
+              <p>
+                <span>Population:</span> Population
+              </p>
+              <p>
+                <span>Region:</span> Region
+              </p>
+              <p>
+                <span>Sub Region:</span> Sub Region
+              </p>
+              <p>
+                <span>Capital:</span> Capital
+              </p>
+            </div>
+            <div className={styles.rightDesc}>
+              <p>
+                <span>Top Level Domain:</span> Top Level Domain
+              </p>
+              <p>
+                <span>Currencies:</span> Currencies
+              </p>
+              <p>
+                <span>Languages:</span> Languages
+              </p>
+            </div>
           </div>
           <div className={styles.detailBorderCountries}>
             <p>
