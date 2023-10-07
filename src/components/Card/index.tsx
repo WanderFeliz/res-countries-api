@@ -2,24 +2,15 @@
 import Image from "next/image";
 import React, { FC } from "react";
 import styles from "./card.module.scss";
+import { ICountry } from "@/interfaces";
 
 type CardProps = {
-  name: string;
-  population: number;
-  region: string;
-  capital: string;
-  flag: string;
+  country: ICountry;
   onCardClick?: () => void;
 };
 
-const Card: FC<CardProps> = ({
-  name,
-  population,
-  region,
-  capital,
-  flag,
-  onCardClick,
-}) => {
+const Card: FC<CardProps> = ({ country, onCardClick }) => {
+  const { name, population, region, capital, flag } = country;
   return (
     <div className={styles.cardContainer} onClick={onCardClick}>
       <div className={styles.cardImage}>

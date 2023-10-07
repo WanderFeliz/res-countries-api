@@ -6,6 +6,7 @@ import styles from "./page.module.scss";
 import Card from "@/components/Card";
 import Select from "@/components/Select";
 import { useRouter } from "next/navigation";
+import { ICountry } from "@/interfaces";
 
 export default function Home() {
   const { theme } = useTheme();
@@ -18,7 +19,26 @@ export default function Home() {
     { value: "Oceania", label: "Oceania" },
   ];
 
-  const countries = [
+  // const fetchCountries = async () => {
+
+  //   const r = await fetch(
+  //     "https://restcountries.eu/rest/v2/all",
+  //     {
+  //       method: "GET",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       mode: "no-cors",
+  //     }
+
+  //   )
+  //   const response = await fetch("https://restcountries.eu/rest/v2/all");
+  //   const data = await response.json();
+  //   console.log(data);
+  // };
+
+
+  const countries: ICountry[] = [
     {
       name: "Germany",
       population: 123456789,
@@ -93,7 +113,7 @@ export default function Home() {
       <section className={styles.countriesContainer}>
         {
           countries.map((country, index) => (
-            <Card key={index} {...country} onCardClick={() => handleOpenCard(`${index}`)}/>
+            <Card key={index} country={country} onCardClick={() => handleOpenCard(`${index}`)}/>
           ))
         }
       </section>
