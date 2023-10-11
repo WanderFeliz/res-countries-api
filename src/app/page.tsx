@@ -1,15 +1,17 @@
 "use client";
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import {useTheme} from "@/hooks/useTheme";
+import { useTheme } from "@/hooks/useTheme";
 import styles from "./page.module.scss";
 import Card from "@/components/Card";
 import Select from "@/components/Select";
 import { useRouter } from "next/navigation";
 import { ICountry } from "@/interfaces";
+import useCountries from "@/hooks/useCountries";
 
 export default function Home() {
   const { theme } = useTheme();
+  const { countries, loading, error } = useCountries();
   const router = useRouter();
   const selectOptions = [
     { value: "Africa", label: "Africa" },
@@ -18,88 +20,10 @@ export default function Home() {
     { value: "Europe", label: "Europe" },
     { value: "Oceania", label: "Oceania" },
   ];
-
-  // const fetchCountries = async () => {
-
-  //   const r = await fetch(
-  //     "https://restcountries.eu/rest/v2/all",
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       mode: "no-cors",
-  //     }
-
-  //   )
-  //   const response = await fetch("https://restcountries.eu/rest/v2/all");
-  //   const data = await response.json();
-  //   console.log(data);
-  // };
-
-
-  const countries: ICountry[] = [
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-    {
-      name: "Germany",
-      population: 123456789,
-      region: "Europa",
-      capital: "Capital",
-      flag: "/images/flag.png",
-    },
-  ];
-
-  const handleOpenCard = (index: string) => {
-    router.push(`/detail/${index}`)
-  }
+  
+  const handleOpenCard = (cca3: string) => {
+    router.push(`/detail/${cca3}`);
+  };
 
   return (
     <main className={styles.main} data-theme={theme}>
@@ -108,14 +32,21 @@ export default function Home() {
           <SearchIcon className={styles.searchIcon} />
           <input type="text" placeholder="Search for a country..." />
         </div>
-        <Select options={selectOptions} placeholder="Filter by Region"/>
+        <Select options={selectOptions} placeholder="Filter by Region" />
       </section>
       <section className={styles.countriesContainer}>
-        {
-          countries.map((country, index) => (
-            <Card key={index} country={country} onCardClick={() => handleOpenCard(`${index}`)}/>
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          countries.map((country) => (
+            <Card
+              key={country.cca3}
+              country={country}
+              onCardClick={() => handleOpenCard(`${country.cca3}`)}
+            />
           ))
-        }
+        )}
+        {error && <p>{error}</p>}
       </section>
     </main>
   );

@@ -10,20 +10,20 @@ type CardProps = {
 };
 
 const Card: FC<CardProps> = ({ country, onCardClick }) => {
-  const { name, population, region, capital, flag } = country;
+  const { name, population, region, capital, flags } = country;
   return (
     <div className={styles.cardContainer} onClick={onCardClick}>
       <div className={styles.cardImage}>
         <Image
           className={styles.image}
-          src={flag}
+          src={flags.svg}
           alt="Country Flag"
           width={50}
           height={50}
         />
       </div>
       <div className={styles.cardContent}>
-        <h2 className={styles.cardTitle}>{name}</h2>
+        <h2 className={styles.cardTitle}>{name.common}</h2>
         <div className={styles.cardDescription}>
           <p>
             <span>Population:</span> {population}

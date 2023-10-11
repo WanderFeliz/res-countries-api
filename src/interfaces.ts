@@ -1,13 +1,25 @@
+import { CountryNameType } from "./types";
+
 export interface ICountry {
-    name: string;
-    capital: string;
+    cca3: string;
+    name: CountryNameType;
+    capital: string[];
     region: string;
     population: number;
-    flag: string;
-    nativeName?: string;
-    subRegion?: string;
-    topLevelDomain?: string;
-    currencies?: string;
-    languages?: string;
-    borderCountries?: string[];
+    flags:{
+        png: string;
+        svg: string;
+        alt: string;
+    };
+    nativeName?: {};
+    subregion?: string;
+    tld?: string[];
+    currencies?: {
+        [key: string]: {
+            name: string;
+            symbol: string;
+        };
+    };
+    languages?: {key: {key: string, value: string}};
+    borders?: string[];
 }
