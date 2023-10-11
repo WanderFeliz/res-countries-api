@@ -1,14 +1,21 @@
+'use client'
 import React from "react";
 import Image from "next/image";
-
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import styles from "./page.module.scss";
+import { useRouter } from "next/navigation";
+import { ICountry } from "@/interfaces";
 
-const DetailPage = () => {
+type DetailPageProps = {
+  country: ICountry;
+};
+
+const DetailPage: React.FC<DetailPageProps> = ({country}) => {
+  const router = useRouter()
   return (
     <main className={styles.container}>
       <header className={styles.header}>
-        <button className={styles.backButton}>
+        <button className={styles.backButton} onClick={()=> router.back()}>
           <KeyboardBackspaceIcon className={styles.backIcon} />
           Back
         </button>
@@ -56,9 +63,12 @@ const DetailPage = () => {
             </div>
           </div>
           <div className={styles.detailBorderCountries}>
-            <p>
-              <span>Border Countries:</span> Border Countries
-            </p>
+              <h4>Border Countries:</h4> 
+              <div className={styles.buttonContainer}>
+                <button className={styles.borderCountryBtn}>Country 1</button>
+                <button className={styles.borderCountryBtn}>Country 2</button>
+                <button className={styles.borderCountryBtn}>Country 3</button>
+              </div>
           </div>
         </div>
       </section>

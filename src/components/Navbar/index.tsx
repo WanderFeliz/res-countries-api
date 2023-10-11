@@ -4,7 +4,7 @@ import styles from "./navbar.module.scss";
 
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
-import { useTheme } from "@/context/ThemeContext";
+import { useTheme } from "@/hooks/useTheme";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -27,8 +27,5 @@ const Navbar = () => {
     </nav>
   );
 };
-`
-  
-`
 
 export default Navbar;

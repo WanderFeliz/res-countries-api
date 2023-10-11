@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-import { useTheme } from "@/context/ThemeContext";
+import {useTheme} from "@/hooks/useTheme";
 import styles from "./page.module.scss";
 import Card from "@/components/Card";
 import Select from "@/components/Select";
