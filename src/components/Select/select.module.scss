@@ -1,3 +1,5 @@
+@use "/src/app/styles/abstracts/mixin" as *;
+
 .select{
     display: flex;
     justify-content: center;
@@ -11,6 +13,11 @@
     cursor: pointer;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 0 8px var(--shadow-color);
+
+    @include mobile{
+        height: 60px;
+        width: 60%;
+    }
 
     .selectPlaceholder{
         width: 100%;
@@ -46,6 +53,10 @@
             padding: 0;
             top: 3.6rem;
             border-radius: 5px;
+
+            @include mobile{
+                top: 4rem;
+            }
 
             .selectOption{
                 display: block;

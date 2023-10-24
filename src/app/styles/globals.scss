@@ -1,3 +1,4 @@
+@use "/src/app/styles/abstracts/mixin" as *;
 // ## Colors
 
 :root {
@@ -57,8 +58,18 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
 
+    @include mobile {
+      gap: 0;
+    }
+
     > * {
       max-width: 1440px;
+
+      @include mobile {
+        max-width: 375px;
+      }
     }
+
+    
   }
 }
