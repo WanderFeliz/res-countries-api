@@ -66,7 +66,7 @@ body {
       max-width: 1440px;
 
       @include mobile {
-        max-width: 375px;
+        max-width: 768px;
       }
     }
 
