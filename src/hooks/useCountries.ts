@@ -1,31 +1,37 @@
 import { ICountry } from "@/interfaces";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
-const useCountries = () => {
-  const [countries, setCountries] = useState<ICountry[]>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
+export const useCountries = () => {
   const fetchCountries = async () => {
     try {
-      setLoading(true);
       const response = await fetch(
         "https://restcountries.com/v3.1/all?fields=cca3,name,flags,tld,currencies,languages,capital,region,subregion,population,borders"
       );
-      const data = await response.json();
-      setCountries(data);
-      setLoading(false);
+      return response.json();
     } catch (error) {
-      setError(true);
-      setLoading(false);
+      throw new Error("Error fetching countries");
     }
   };
 
-  useEffect(() => {
-    fetchCountries();
-  }, []);
+  const { data, isLoading, isError } = useQuery<ICountry[], Error>(
+    "countries",
+    fetchCountries
+  );
+  const countries = data || [];
 
-  return { countries, loading, error };
+  return { countries, isLoading, isError };
 };
 
-export default useCountries;
+export const useCountry = ({code}: {code: string}) => {
+  // const result = useQuery(['countries', code], () => fetch('/todos'), {
+  //   initialData: () => {
+  //     // Use a todo from the 'todos' query as the initial data for this todo query
+  //     return queryClient.getQueryData('todos')?.find(d => d.id === todoId)
+  //   },
+  // })
+  // const country = data || {};
+
+  // return { countries, isLoading, isError };
+  return {}
+};
+

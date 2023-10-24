@@ -1,6 +1,7 @@
 @use "/src/app/styles/abstracts/variables" as *;
+@use "/src/app/styles/abstracts/mixin" as *;
 
-.navbar{
+.navbar {
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -11,24 +12,50 @@
     color: var(--text-color);
     box-shadow: 0 0 8px var(--shadow-color);
 
-    .themeButton{
-        width: 150px;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        gap: .3rem;
-        border: none;
-        outline: none;
-        appearance: none;
-        background-color: transparent;
-        color: var(--text-color);
-        font-weight: 300;
-        cursor: pointer;
+    @include mobile {
+        padding: 0 1rem;
+    }
 
-        .themeIcon{
-            width: 24px;
-            height: 16px;
-            font-size: 14px;
+    .left {
+        h2 {
+
+            @include mobile {
+                font-size: 16px;
+                font-weight: 900;
+            }
         }
     }
+
+    .right {
+        .themeButton {
+            width: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: .3rem;
+            font-family: inherit;
+            border: none;
+            outline: none;
+            appearance: none;
+            background-color: transparent;
+            color: var(--text-color);
+            font-weight: 300;
+            cursor: pointer;
+
+            @include mobile {
+                font-size: 14px;
+                font-weight: 300;
+            }
+
+            .themeIcon {
+                width: 24px;
+                height: 16px;
+                font-size: 14px;
+            }
+        }
+
+        
+    }
+
+
 }

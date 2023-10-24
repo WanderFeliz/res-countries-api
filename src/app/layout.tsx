@@ -2,6 +2,7 @@ import "./styles/globals.scss";
 import type { Metadata } from "next";
 import { Nunito_Sans } from "next/font/google";
 import { ThemeProvider } from "@/context/ThemeContext";
+import { QueryProvider } from "@/context/QueryClient";
 
 import Navbar from "@/components/Navbar";
 
@@ -23,10 +24,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={nunito_sans.className}>
-        <ThemeProvider>
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <QueryProvider>
+          <ThemeProvider>
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </QueryProvider>
       </body>
     </html>
   );

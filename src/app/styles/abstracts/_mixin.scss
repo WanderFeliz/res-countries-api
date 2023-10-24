@@ -1,0 +1,7 @@
+@use '/src/app/styles/abstracts/variables' as vars;
+
+@mixin mobile {
+    @media (max-width: vars.$mobile-width) {
+        @content;
+    }
+}

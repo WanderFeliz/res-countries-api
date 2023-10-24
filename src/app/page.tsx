@@ -7,11 +7,11 @@ import Card from "@/components/Card";
 import Select from "@/components/Select";
 import { useRouter } from "next/navigation";
 import { ICountry } from "@/interfaces";
-import useCountries from "@/hooks/useCountries";
+import {useCountries} from "@/hooks/useCountries";
 
 export default function Home() {
   const { theme } = useTheme();
-  const { countries, loading, error } = useCountries();
+  const { countries, isLoading, isError } = useCountries();
   const router = useRouter();
   const selectOptions = [
     { value: "Africa", label: "Africa" },
@@ -35,7 +35,7 @@ export default function Home() {
         <Select options={selectOptions} placeholder="Filter by Region" />
       </section>
       <section className={styles.countriesContainer}>
-        {loading ? (
+        {isLoading ? (
           <p>Loading...</p>
         ) : (
           countries.map((country) => (
@@ -46,7 +46,7 @@ export default function Home() {
             />
           ))
         )}
-        {error && <p>{error}</p>}
+        {isError && <p>Something when wrong</p>}
       </section>
     </main>
   );

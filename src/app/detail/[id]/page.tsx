@@ -5,7 +5,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import styles from "./page.module.scss";
 import { useRouter, useParams } from "next/navigation";
 import { ICountry } from "@/interfaces";
-import useCountries from "@/hooks/useCountries";
+import {useCountries} from "@/hooks/useCountries";
 import { BorderCountryType } from "@/types";
 
 type DetailPageProps = {
@@ -51,8 +51,6 @@ const DetailPage: React.FC<DetailPageProps> = () => {
     setNativeName(getNativeName(country));
     setBorderCountries(getBorderCountries(country));
   }, [cid, countries]);
-
-  console.log("country", country);
 
   return (
     <main className={styles.container}>
