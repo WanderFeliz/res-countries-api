@@ -1,3 +1,5 @@
+@use "/src/app/styles/abstracts/mixin" as *;
+
 .cardContainer {
     max-width: 270px;
     height: 320px;
@@ -10,6 +12,11 @@
     z-index: 0;
     transition: all 0.3s ease-out;
     box-shadow: 0 0 8px var(--shadow-color);
+
+    @include mobile{
+        max-width: 100%;
+        flex-basis: 100%;
+    }
 
 
     &:hover {
