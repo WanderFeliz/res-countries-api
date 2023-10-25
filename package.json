@@ -13,10 +13,10 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.12",
     "@mui/material": "^5.14.12",
+    "@tanstack/react-query": "^5.0.5",
     "next": "13.5.4",
     "react": "^18",
-    "react-dom": "^18",
-    "react-query": "^3.39.3"
+    "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",

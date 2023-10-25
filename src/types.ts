@@ -13,9 +13,3 @@ export type CountryNameType = {
     };
   };
 };
-
-export type BorderCountryType = {
-  common: string;
-  goTo: () => void;
-  cca3: string;
-};
