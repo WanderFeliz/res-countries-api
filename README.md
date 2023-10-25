@@ -16,16 +16,30 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ## Overview
 
-
 ### Screenshot
 
-![](./screenshot.jpg)
+#### Desktop View
 
+- Dark Mode
+  ![Home Page](./screenshots/desktop-dark.png)
+  ![Detail Page](./screenshots/desktop-detail-dark.png)
+- Light Mode
+  ![Home Page](./screenshots/desktop-light.png)
+  ![Detail Page](./screenshots/desktop-detail-light.png)
+
+#### Mobile View
+
+- Dark Mode
+  ![Home Page](./screenshots/mobile-home-dark.png)
+  ![Detail Page](./screenshots/mobile-detail-dark.png)
+- Light Mode
+  ![Home Page](./screenshots/mobile-light.png)
+  ![Detail Page](./screenshots/mobile-detail-light.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repo](https://github.com/WanderFeliz/res-countries-api)
+- Live Site URL: [Demo](https://your-live-site-url.com)
 
 ## My process
 
@@ -38,11 +52,9 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 - [Next.js](https://nextjs.org/) - React framework
 - [Sass](https://sass-lang.com/) - For styles
 
-
 ### What I learned
 
 Here I learned how to use in more detail the library Tanstack Query.
-
 
 ### Continued development
 

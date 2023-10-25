@@ -8,11 +8,7 @@ import { ICountry } from "@/interfaces";
 import { useCountry } from "@/hooks/useCountries";
 import { BorderCountryButton } from "@/components/BorderCountryButton";
 
-type DetailPageProps = {
-  country: ICountry;
-};
-
-const DetailPage: React.FC<DetailPageProps> = () => {
+const DetailPage = () => {
   const router = useRouter();
   const params = useParams();
   const cid = params?.id;
