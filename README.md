@@ -39,7 +39,7 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 ### Links
 
 - Solution URL: [Repo](https://github.com/WanderFeliz/res-countries-api)
-- Live Site URL: [Demo](https://your-live-site-url.com)
+- Live Site URL: [Demo](https://wanderfeliz.github.io/res-countries-api)
 
 ## My process
 
