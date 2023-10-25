@@ -5,8 +5,17 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import styles from "./page.module.scss";
 import { useRouter, useParams } from "next/navigation";
 import { ICountry } from "@/interfaces";
-import { useCountry } from "@/hooks/useCountries";
+import { useCountry, FIELDS } from "@/hooks/useCountries";
 import { BorderCountryButton } from "@/components/BorderCountryButton";
+
+export async function generateStaticParams() {
+  const res = await fetch(`https://restcountries.com/v3.1/all?fields=${FIELDS}`);
+  const countries: ICountry[] = await res.json();
+ 
+  return countries.map((country) => ({
+    id: country.cca3,
+  }))
+}
 
 const DetailPage = () => {
   const router = useRouter();
