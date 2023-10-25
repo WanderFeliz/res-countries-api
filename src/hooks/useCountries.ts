@@ -1,5 +1,6 @@
 import { ICountry } from "@/interfaces";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
+import { useCallback, useState } from "react";
 
 const FIELDS =
   "cca3,name,flags,tld,currencies,languages,capital,region,subregion,population,borders";
@@ -27,18 +28,57 @@ const fetchCountryByCode = async (code: string): Promise<ICountry> => {
 };
 
 export const useCountries = () => {
+  const [countryFilter, setCountryFilter] = useState<string | null>("");
+  const [regionFilter, setRegionFilter] = useState<string | null>("");
+
+  const filterCountryByRegion = (countries: ICountry[]) => {
+    if (!regionFilter) return countries;
+    return countries.filter((country) =>
+      country.region.toLowerCase().includes(regionFilter.toLowerCase())
+    );
+  };
+
+  const filterCountryByName = (countries: ICountry[]) => {
+    if (!countryFilter) return countries;
+    return countries.filter(
+      (country) =>
+        country.name.common
+          .toLowerCase()
+          .includes(countryFilter.toLowerCase()) ||
+        country.name.official
+          .toLowerCase()
+          .includes(countryFilter.toLowerCase())
+    );
+  };
+
+  const filterCountry = useCallback(
+    (countries: ICountry[]) => {
+      if(countryFilter && regionFilter){
+        return filterCountryByName(filterCountryByRegion(countries));
+      }else if (countryFilter) {
+        return filterCountryByName(countries);
+      }else if (regionFilter) {
+        return filterCountryByRegion(countries);
+      } else{
+        return countries;
+      }
+    },
+    [countryFilter, regionFilter]
+  );
+
   const { data, isLoading, isError } = useQuery<ICountry[], Error>({
     queryKey: ["countries"],
     queryFn: fetchCountries,
+    refetchOnWindowFocus: false,
+    select: filterCountry,
   });
 
   const countries = data || [];
 
-  return { countries, isLoading, isError };
+  return { countries, isLoading, isError, setCountryFilter, setRegionFilter };
 };
 
 export const useCountry = (code: string | string[]) => {
-
   const paramCode: string =
     typeof code == "object" && code?.length ? code[0] : code.toString();
   const queryClient = useQueryClient();
@@ -51,10 +91,4 @@ export const useCountry = (code: string | string[]) => {
         .getQueryData<any>(["countries"])
         ?.find((country: ICountry) => country.cca3 === code),
   });
-
-  // if (result.data) {
-  //   console.log(result.data);
-
-  //   return { country: result.data, isLoading: result.isLoading };
-  // }
 };
