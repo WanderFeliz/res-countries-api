@@ -1,9 +1,8 @@
+import { FIELDS } from "@/constants";
 import { ICountry } from "@/interfaces";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { useCallback, useState } from "react";
 
-export const FIELDS =
-  "cca3,name,flags,tld,currencies,languages,capital,region,subregion,population,borders";
 
 const COUNTRY_API_URL = `https://restcountries.com/v3.1/all?fields=${FIELDS}`;
 
