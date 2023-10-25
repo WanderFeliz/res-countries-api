@@ -46,6 +46,7 @@ const DetailPage: React.FC<DetailPageProps> = () => {
                 src={country?.flags?.svg || "/"}
                 width={100}
                 height={100}
+                priority
                 alt={country?.flags?.alt || ""}
               />
             </div>

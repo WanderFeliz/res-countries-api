@@ -20,6 +20,7 @@ const Card: FC<CardProps> = ({ country, onCardClick }) => {
           alt="Country Flag"
           width={50}
           height={50}
+          priority
         />
       </div>
       <div className={styles.cardContent}>
